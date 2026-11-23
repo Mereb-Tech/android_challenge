@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.google.protobuf'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+application {
+    mainClass = 'com.example.challenge.server.HelloServer'
+}
+
+// Share the app's proto so client and server can never drift apart.
+sourceSets.main.proto.srcDir '../app/src/main/proto'
+
+protobuf {
+    protoc { artifact = 'com.google.protobuf:protoc:3.25.1' }
+    plugins {
+        grpc { artifact = 'io.grpc:protoc-gen-grpc-java:1.81.0' }
+    }
+    generateProtoTasks {
+        all().each { task -> task.plugins { grpc {} } }
+    }
+}
+
+dependencies {
+    implementation 'io.grpc:grpc-netty-shaded:1.82.2'
+    implementation 'io.grpc:grpc-protobuf:1.82.2'
+    implementation 'io.grpc:grpc-stub:1.82.2'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+}
