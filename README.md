@@ -1,6 +1,6 @@
 # Android Challenge
 
-Interview starter. Stack: Java 17, ViewBinding, AGP 8.12.3, Gradle 8.14.5, Kotlin plugin 2.2.0,
+Interview starter. Stack: Java 17,  AGP 8.12.3, Gradle 8.14.5, Kotlin plugin 2.2.0,
 compileSdk 36 / minSdk 33, protobuf + gRPC-lite (okhttp).
 
 ## Task
