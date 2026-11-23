@@ -13,10 +13,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-
-        // Emulator -> host machine. Change for a real device or remote server.
-        buildConfigField "String", "GRPC_HOST", '"10.0.2.2"'
-        buildConfigField "int", "GRPC_PORT", "50051"
     }
 
     buildFeatures {
@@ -67,8 +63,6 @@ dependencies {
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // @Generated for generated gRPC code
 
     testImplementation "junit:junit:4.13.2"
-    testImplementation "androidx.arch.core:core-testing:2.2.0"
-    testImplementation "io.grpc:grpc-inprocess:1.84.0"
     androidTestImplementation "androidx.test:core:1.7.0"
     androidTestImplementation "androidx.test.ext:junit:1.3.0"
     androidTestImplementation "androidx.test:runner:1.7.0"
