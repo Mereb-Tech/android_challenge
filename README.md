@@ -1,6 +1,6 @@
 # Android Challenge
 
-Interview starter.
+Fork this repo and work on your own github.
 
 ## Tech used
 - **Language / UI:** Java 17, XML layouts, Material 3, AppCompat, ConstraintLayout
